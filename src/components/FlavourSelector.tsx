@@ -36,7 +36,7 @@ export default function FlavourSelector() {
               <p className="mt-3 max-w-md text-xl font-bold">“{p.personality}”</p>
               <div className="mt-6"><TasteMeter notes={p.notes} dark={dark} /></div>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <button onClick={() => add('product', p.slug, 1, { title: p.name, image: p.pack })} className={cx('btn', dark ? 'btn-cream' : 'btn-ink')}>Add to cart · {inr(p.price)}</button>
+                <button data-add-to-cart onClick={() => add('product', p.slug, 1, { title: p.name, image: p.pack })} className={cx('btn', dark ? 'btn-cream' : 'btn-ink')}>Add to cart · {inr(p.price)}</button>
                 <Link to={`/products/${p.slug}`} className="font-extrabold underline decoration-2 underline-offset-4">Meet {p.name}</Link>
               </div>
             </div>

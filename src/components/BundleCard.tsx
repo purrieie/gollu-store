@@ -31,7 +31,7 @@ export default function BundleCard({ b, featured = false }: { b: Bundle; feature
           <p className="display text-[34px]">{inr(b.price)}</p>
           <p className="text-sm font-extrabold">You save {inr(save)}</p>
         </div>
-        <button onClick={() => add('bundle', b.slug, 1, { open: true })} className={cx('btn', dark ? 'btn-cream' : 'btn-ink')}>Add bundle</button>
+        <button data-add-to-cart onClick={() => add('bundle', b.slug, 1, { open: true })} className={cx('btn', dark ? 'btn-cream' : 'btn-ink')}>Add bundle</button>
       </div>
     </article>
   )

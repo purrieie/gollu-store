@@ -124,7 +124,7 @@ export default function Product() {
 
             <div ref={atc} className="mt-6 flex gap-3">
               <QtyStepper value={qty} onChange={(n) => setQty(Math.max(1, Math.min(20, n)))} />
-              <button onClick={doAdd} className="btn btn-pink flex-1 py-4 text-base">Add to cart · {inr(p.price * qty)}</button>
+              <button data-add-to-cart onClick={doAdd} className="btn btn-pink flex-1 py-4 text-base">Add to cart · {inr(p.price * qty)}</button>
             </div>
 
             <ul className="mt-5 grid grid-cols-3 gap-2 text-center text-xs font-bold">
@@ -141,7 +141,7 @@ export default function Product() {
                     <Link to={`/products/${x.slug}`} className="grid h-16 w-16 shrink-0 place-items-center rounded-xl" style={{ background: x.soft }}><img src={x.pack} alt="" className="h-14 w-auto" /></Link>
                     <span className="min-w-0 flex-1"><Link to={`/products/${x.slug}`} className="block font-extrabold hover:underline">{x.name}</Link><span className="block truncate text-sm text-ink/70">{x.personality}</span></span>
                     <span className="font-extrabold">{inr(x.price)}</span>
-                    <button onClick={() => add('product', x.slug, 1, { title: x.name, image: x.pack })} className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink bg-mango shadow-sticker-sm" aria-label={`Add ${x.name}`}><PlusIcon className="h-4 w-4" /></button>
+                    <button data-add-to-cart onClick={() => add('product', x.slug, 1, { title: x.name, image: x.pack })} className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink bg-mango shadow-sticker-sm" aria-label={`Add ${x.name}`}><PlusIcon className="h-4 w-4" /></button>
                   </li>
                 ))}
               </ul>

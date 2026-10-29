@@ -15,5 +15,37 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- TrooFestive: Diwali mode. Paste just before </body> on every page except cart and checkout.
+     Change only the lines marked "CHANGE". If the folder isn't at /troofestive/, change that path everywhere below. -->
+<script id="troofestive-config" type="application/json">
+{
+  "cfg": {
+    "version": 1, "enabled": true, "startDate": "",
+    "endDate": "2026-11-10",
+    "pages": { "home": true, "collection": true, "product": true, "cart": false, "other": true,
+               "collections": [], "products": [], "productsIn": [], "paths": [] },
+    "look": { "theme": "diwali", "style": "classic",
+              "palette": { "mode": "festive", "colors": [], "metal": "gold" },
+              "strings": "both", "blink": true,
+              "features": { "sides": true, "kandils": true, "sparkles": true, "titles": true, "cta": true } },
+    "assets": { "hanging": [], "titles": [], "envelopeClosed": "", "envelopeOpen": "", "cursor": "" },
+    "moments": { "off": false, "loader": true, "burst": true, "eco": false,
+                 "cursor": true, "cursorStyle": "phuljhadi", "trail": true,
+                 "shagun": true, "shagunCode": "SHAGUN101", "shagunText": "₹101 off" }
+  },
+  "page": "other", "handle": "", "inCollections": [],
+  "engine": "/troofestive/troofestive-engine.js",
+  "moments": "/troofestive/troofestive-moments.js",
+  "assets": {
+    "kandil": ["/troofestive/kandil-1.png", "/troofestive/kandil-2.png"],
+    "diya": ["/troofestive/diya-1.png", "/troofestive/diya-2.png", "/troofestive/diya-3.png", "/troofestive/diya-4.png"],
+    "lifafa": "/troofestive/lifafa-open.png",
+    "lifafaClosed": "/troofestive/lifafa-closed.png",
+    "cursorDiya": "/troofestive/cursor-diya.png",
+    "cursorPhuljhadi": "/troofestive/cursor-phuljhadi.png"
+  }
+}
+</script>
+<script src="/troofestive/troofestive-loader.js" defer></script>
+</body>
 </html>

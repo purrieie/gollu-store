@@ -27,7 +27,7 @@ export default function ProductCard({ p, shelf = false, priority = false }: { p:
         <p className="mt-0.5 text-[13px] font-semibold text-ink/75 md:text-sm">{p.flavour}</p>
         <p className="text-[13px] text-ink/60 md:text-sm">{p.descriptor} · {p.size}</p>
         <div className="mt-1.5 flex items-center gap-1.5 text-xs font-bold"><Stars rating={p.rating} className="h-3.5" />{p.rating} <span className="font-semibold text-ink/55">({p.reviews.toLocaleString('en-IN')})</span></div>
-        <button onClick={() => add('product', p.slug, 1, { title: p.name, image: p.pack })} className="btn btn-ink btn-sm mt-3 w-full" aria-label={`Quick add ${p.name}`}>
+        <button data-add-to-cart onClick={() => add('product', p.slug, 1, { title: p.name, image: p.pack })} className="btn btn-ink btn-sm mt-3 w-full" aria-label={`Quick add ${p.name}`}>
           <PlusIcon className="h-4 w-4" /> Quick add
         </button>
       </div>

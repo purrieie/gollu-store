@@ -10,7 +10,7 @@ export default function StickyAddToCart({ p, visible, onAdd, qty }: { p: Product
           <p className="truncate font-extrabold leading-tight">{p.name}</p>
           <p className="truncate text-xs font-semibold text-ink/70">{p.flavour} · {inr(p.price)}</p>
         </div>
-        <button onClick={onAdd} tabIndex={visible ? 0 : -1} className="btn btn-pink shrink-0 px-5">Add{qty > 1 ? ` ${qty}` : ''} · {inr(p.price * qty)}</button>
+        <button data-add-to-cart onClick={onAdd} tabIndex={visible ? 0 : -1} className="btn btn-pink shrink-0 px-5">Add{qty > 1 ? ` ${qty}` : ''} · {inr(p.price * qty)}</button>
       </div>
     </div>
   )

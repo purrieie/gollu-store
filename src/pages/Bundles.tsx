@@ -62,7 +62,7 @@ function BoxBuilder() {
           <p className="font-extrabold">{picks.length}/{SLOTS} picked{tier ? ` · ${tier.label}` : picks.length ? ` · ${3 - picks.length} more for 10% off` : ''}</p>
           <p className="text-sm font-semibold text-ink/70">{picks.length ? <>{off > 0 && <s className="mr-2">{inr(sum)}</s>}<span className="text-base font-extrabold text-ink">{inr(sum - off)}</span></> : 'Tap a flavour to drop it in the box.'}</p>
         </div>
-        <button disabled={!picks.length} onClick={addBox} className="btn btn-ink">Add box to cart</button>
+        <button data-add-to-cart disabled={!picks.length} onClick={addBox} className="btn btn-ink">Add box to cart</button>
       </div>
     </section>
   )
@@ -96,7 +96,7 @@ export default function Bundles() {
             <p className="mt-2 text-ink/80">Perfect for trying everything, office desks, return gifts, and apologising.</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <span className="display text-[38px]">{inr(tiffin.price)}</span>
-              <button onClick={() => add('product', 'tiffin-mix', 1, { open: true })} className="btn btn-ink">Add Tiffin Mix</button>
+              <button data-add-to-cart onClick={() => add('product', 'tiffin-mix', 1, { open: true })} className="btn btn-ink">Add Tiffin Mix</button>
               <Link to="/products/tiffin-mix" className="font-extrabold underline underline-offset-4">Details</Link>
             </div>
           </div>
